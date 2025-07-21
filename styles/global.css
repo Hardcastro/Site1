@@ -1,0 +1,698 @@
+/* === Variáveis de cores AEther - Tema Escuro === */
+:root {
+  --primary-mint: #B3E3D7;
+  --primary-black: #000000;
+  --dark-navy: #0A0F12;
+  --medium-dark: #1A1F23;
+  --light-grey: #2A3138;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B3E3D7;
+  --text-muted: #8A9299;
+  --accent-hover: #9DD4C7;
+}
+
+/* === Reset & Base === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background-color: var(--primary-black);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-navy) 100%);
+  min-height: 100vh;
+}
+
+/* === Tipografia === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  color: var(--primary-mint);
+  margin-top: 0;
+  text-shadow: 0 0 20px rgba(179, 227, 215, 0.3);
+}
+
+p, li, span, a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+a {
+  color: var(--primary-mint);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-hover);
+  text-shadow: 0 0 10px rgba(179, 227, 215, 0.5);
+  outline: none;
+}
+
+/* === Navegação === */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.96);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(179, 227, 215, 0.15);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  z-index: 1000;
+  user-select: none;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(179, 227, 215, 0.6) 20%, 
+    rgba(179, 227, 215, 0.8) 50%, 
+    rgba(179, 227, 215, 0.6) 80%, 
+    transparent 100%);
+}
+
+nav a.nav-link {
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.8rem 1.8rem;
+  border-radius: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+nav a.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(179, 227, 215, 0.1), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+nav a.nav-link:hover::before {
+  left: 100%;
+}
+
+nav a.nav-link:hover,
+nav a.nav-link.active {
+  color: var(--primary-mint);
+  background: rgba(179, 227, 215, 0.12);
+  border: 1px solid rgba(179, 227, 215, 0.4);
+  box-shadow: 
+    0 6px 20px rgba(179, 227, 215, 0.25),
+    inset 0 1px 0 rgba(179, 227, 215, 0.3);
+  transform: translateY(-1px);
+}
+
+nav a.nav-link.active {
+  background: linear-gradient(135deg, 
+    rgba(179, 227, 215, 0.15), 
+    rgba(179, 227, 215, 0.08));
+  box-shadow: 
+    0 8px 25px rgba(179, 227, 215, 0.3),
+    inset 0 1px 0 rgba(179, 227, 215, 0.4),
+    0 0 0 1px rgba(179, 227, 215, 0.2);
+}
+
+/* === Seções Centralizadas === */
+section {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  gap: 2rem;
+}
+
+/* Layout específico para páginas internas */
+main.internal-page {
+  justify-content: flex-start;
+  padding-top: 8rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.section-active {
+  display: flex !important;
+}
+
+/* === Cards === */
+.card {
+  background: linear-gradient(135deg, 
+    var(--medium-dark) 0%, 
+    var(--light-grey) 50%,
+    var(--medium-dark) 100%);
+  border: 1px solid rgba(179, 227, 215, 0.25);
+  color: var(--text-primary);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.5),
+    0 5px 20px rgba(179, 227, 215, 0.1),
+    inset 0 1px 0 rgba(179, 227, 215, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(179, 227, 215, 0.02) 0%,
+    transparent 20%,
+    transparent 80%,
+    rgba(245, 192, 181, 0.02) 100%);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-15px) scale(1.03);
+  box-shadow: 
+    0 25px 80px rgba(179, 227, 215, 0.4),
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(179, 227, 215, 0.2),
+    inset 0 2px 0 rgba(179, 227, 215, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-mint);
+  outline: none;
+  background: linear-gradient(135deg, 
+    rgba(26, 31, 35, 0.98) 0%, 
+    rgba(42, 49, 56, 0.98) 50%,
+    rgba(26, 31, 35, 0.98) 100%);
+}
+
+.card h3 {
+  color: var(--primary-mint);
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  text-shadow: 0 0 20px rgba(179, 227, 215, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card:hover h3 {
+  text-shadow: 0 0 30px rgba(179, 227, 215, 0.6);
+  transform: translateX(2px);
+}
+
+.card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 1.05rem;
+  transition: color 0.3s ease;
+}
+
+.card:hover p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* === Thumbnails Publicações === */
+.publication-thumb {
+  background: linear-gradient(135deg, var(--medium-dark), var(--light-grey));
+  border: 2px solid var(--primary-mint);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 280px;
+  margin: auto;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  backdrop-filter: blur(10px);
+}
+
+.publication-thumb:hover,
+.publication-thumb:focus-visible {
+  box-shadow: 0 0 30px rgba(179, 227, 215, 0.4);
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--primary-mint), rgba(179, 227, 215, 0.9));
+  color: var(--primary-black);
+  outline: none;
+}
+
+/* === Textura de Fundo Interativa 3D === */
+#background-texture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(179, 227, 215, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse 60% 80% at 0% 50%, rgba(179, 227, 215, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 60% at 100% 50%, rgba(245, 192, 181, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, var(--primary-black) 0%, var(--dark-navy) 100%);
+}
+
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  filter: blur(0.3px);
+  will-change: transform;
+}
+
+.geometric-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    conic-gradient(from 0deg at 25% 25%, transparent 0deg, rgba(179, 227, 215, 0.08) 90deg, transparent 180deg),
+    conic-gradient(from 180deg at 75% 75%, transparent 0deg, rgba(245, 192, 181, 0.06) 90deg, transparent 180deg),
+    radial-gradient(circle at 20% 30%, rgba(179, 227, 215, 0.12) 2px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(179, 227, 215, 0.08) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 80%, rgba(179, 227, 215, 0.06) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 49.8%, rgba(179, 227, 215, 0.03) 50%, transparent 50.2%),
+    linear-gradient(-45deg, transparent 49.8%, rgba(179, 227, 215, 0.03) 50%, transparent 50.2%),
+    linear-gradient(135deg, transparent 49.8%, rgba(245, 192, 181, 0.02) 50%, transparent 50.2%);
+  background-size: 200px 200px, 250px 250px, 80px 80px, 60px 60px, 40px 40px, 30px 30px, 30px 30px, 50px 50px;
+  background-position: 0 0, 100px 100px, 30px 30px, 15px 15px, 0 0, 15px 15px, 25px 25px, 40px 40px;
+  animation: patternMove 45s linear infinite;
+  opacity: 0.8;
+  transform: perspective(1000px) rotateX(2deg);
+}
+
+@keyframes patternMove {
+  0% { 
+    background-position: 0 0, 100px 100px, 30px 30px, 15px 15px, 0 0, 15px 15px, 25px 25px, 40px 40px;
+    transform: perspective(1000px) rotateX(2deg) rotateY(0deg) scale(1);
+  }
+  25% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(0.5deg) scale(1.01);
+  }
+  50% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(1deg) scale(1.02);
+  }
+  75% {
+    transform: perspective(1000px) rotateX(2deg) rotateY(0.5deg) scale(1.01);
+  }
+  100% { 
+    background-position: 200px 200px, 350px 350px, 110px 110px, 75px 75px, 50px 50px, 45px 45px, 75px 75px, 90px 90px;
+    transform: perspective(1000px) rotateX(2deg) rotateY(0deg) scale(1);
+  }
+}
+
+/* === Efeitos de Grid de Dados 3D === */
+.data-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(90deg, rgba(179, 227, 215, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(179, 227, 215, 0.06) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 24px, rgba(179, 227, 215, 0.02) 25px, rgba(179, 227, 215, 0.02) 26px, transparent 27px, transparent 49px),
+    linear-gradient(-45deg, transparent 24px, rgba(245, 192, 181, 0.02) 25px, rgba(245, 192, 181, 0.02) 26px, transparent 27px, transparent 49px);
+  background-size: 50px 50px, 50px 50px, 50px 50px, 50px 50px;
+  animation: gridFlow 35s linear infinite;
+  opacity: 0.7;
+  transform: perspective(800px) rotateX(1deg);
+}
+
+/* === Efeitos Holográficos === */
+.holographic-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 100% 100% at 30% 20%, rgba(179, 227, 215, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 120% at 70% 80%, rgba(245, 192, 181, 0.08) 0%, transparent 60%),
+    conic-gradient(from 90deg at 50% 50%, transparent 0deg, rgba(179, 227, 215, 0.06) 60deg, transparent 120deg, rgba(245, 192, 181, 0.04) 180deg, transparent 240deg, rgba(179, 227, 215, 0.06) 300deg, transparent 360deg);
+  animation: holographicShift 40s ease-in-out infinite;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+@keyframes holographicShift {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.1) rotate(2deg);
+    opacity: 0.7;
+  }
+  75% { 
+    transform: scale(1.05) rotate(1deg);
+    opacity: 0.8;
+  }
+}
+
+@keyframes gridFlow {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* === Elementos de Visualização de Dados === */
+.data-node {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--primary-mint);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px rgba(179, 227, 215, 0.8),
+    0 0 12px rgba(179, 227, 215, 0.4),
+    0 0 18px rgba(179, 227, 215, 0.2);
+  animation: dataFlow 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes dataFlow {
+  0%, 100% { 
+    transform: scale(1) translateY(0);
+    opacity: 0.7;
+    box-shadow: 
+      0 0 6px rgba(179, 227, 215, 0.8),
+      0 0 12px rgba(179, 227, 215, 0.4);
+  }
+  50% { 
+    transform: scale(1.8) translateY(-3px);
+    opacity: 1;
+    box-shadow: 
+      0 0 10px rgba(179, 227, 215, 1),
+      0 0 20px rgba(179, 227, 215, 0.6),
+      0 0 30px rgba(179, 227, 215, 0.3);
+  }
+}
+
+/* === Estados de foco para acessibilidade === */
+*:focus-visible {
+  outline: 2px solid var(--primary-mint);
+  outline-offset: 2px;
+}
+
+/* === Responsividade da Textura === */
+@media (max-width: 768px) {
+  #particles-canvas {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .geometric-pattern {
+    opacity: 0.3;
+    background-size: 60px 60px, 45px 45px, 30px 30px, 20px 20px, 20px 20px;
+  }
+
+  nav {
+    gap: 1rem;
+    padding: 0.75rem 0;
+    flex-wrap: wrap;
+  }
+
+  nav a.nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .geometric-pattern,
+  .data-grid-overlay,
+  .data-node {
+    animation: none;
+  }
+
+  #particles-canvas {
+    opacity: 0.4;
+  }
+}
+
+/* === Mascotes & Partículas === */
+#contact-mascote {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px var(--primary-mint));
+  user-select: none;
+  pointer-events: none;
+}
+
+/* === Botões === */
+button,
+input[type="submit"] {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-mint), var(--accent-hover));
+  color: var(--primary-black);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(179, 227, 215, 0.3);
+}
+
+button:hover,
+input[type="submit"]:hover,
+button:focus-visible,
+input[type="submit"]:focus-visible {
+  background: linear-gradient(135deg, var(--accent-hover), var(--primary-mint));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(179, 227, 215, 0.4);
+  outline: none;
+}
+
+/* === Inputs e Textareas === */
+input[type="text"],
+input[type="email"],
+textarea {
+  background: rgba(26, 31, 35, 0.8);
+  border: 1px solid rgba(179, 227, 215, 0.3);
+  border-radius: 12px;
+  color: var(--text-primary);
+  padding: 1rem 1.25rem;
+  width: 100%;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'IBM Plex Sans', sans-serif;
+  backdrop-filter: blur(10px);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--primary-mint);
+  box-shadow: 0 0 15px rgba(179, 227, 215, 0.2);
+  background: rgba(26, 31, 35, 0.9);
+  outline: none;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* === Efeitos especiais === */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--primary-mint), transparent, var(--primary-mint));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.7;
+}
+
+/* === Animações de Loading === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, 
+    rgba(179, 227, 215, 0.1) 25%, 
+    rgba(179, 227, 215, 0.3) 50%, 
+    rgba(179, 227, 215, 0.1) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* === Melhorias de Transição === */
+* {
+  transition: color 0.3s ease, 
+              background-color 0.3s ease, 
+              border-color 0.3s ease, 
+              transform 0.3s ease, 
+              box-shadow 0.3s ease, 
+              opacity 0.3s ease;
+}
+
+/* === Layout Responsivo === */
+@media (min-width: 640px) {
+  body {
+    font-size: 18px;
+  }
+
+  nav {
+    gap: 2.5rem;
+  }
+
+  nav a.nav-link {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: 8rem 1rem 4rem;
+    max-width: 1200px;
+  }
+
+  nav {
+    gap: 3rem;
+  }
+
+  .card {
+    padding: 3rem;
+  }
+}
+
+/* === Scrollbar customizada === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-mint);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}

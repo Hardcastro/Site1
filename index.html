@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AEther - Início</title>
+  <meta name="description" content="AEther - Soluções analíticas com alma e precisão. Especialistas em Business Intelligence, Geoanálise e Web3 Analytics." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- TailwindCSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body class="bg-black text-white font-body overflow-x-hidden">
+  <!-- Navegação -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
+    <a href="index.html" class="nav-link active">Início</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="asa.html" class="nav-link">Método ASA</a>
+    <a href="projetos.html" class="nav-link">Projetos</a>
+    <a href="publicacoes.html" class="nav-link">Publicações</a>
+    <a href="contato.html" class="nav-link">Contato</a>
+  </nav>
+
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <main class="min-h-screen flex flex-col justify-center items-center px-4 relative">
+    <div class="relative z-10 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-8 text-[#B3E3D7] leading-tight">
+        Transformamos dados em <span class="text-[#F5C0B5]">decisões estratégicas</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-16 mx-auto">
+        Especialistas em Business Intelligence, Geoanálise e Web3 Analytics para profissionais que buscam insights de alto impacto.
+      </p>
+
+      <!-- Indicadores Profissionais -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto">
+        <div class="card text-center py-8 px-6">
+          <div class="text-5xl font-bold text-[#B3E3D7] mb-3 font-mono">500+</div>
+          <div class="text-gray-300 font-semibold text-lg">Análises Realizadas</div>
+          <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="card text-center py-8 px-6">
+          <div class="text-5xl font-bold text-[#B3E3D7] mb-3 font-mono">98%</div>
+          <div class="text-gray-300 font-semibold text-lg">Precisão em Insights</div>
+          <div class="w-20 h-1 bg-gradient-to-r from-[#F5C0B5] to-[#B3E3D7] mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="card text-center py-8 px-6">
+          <div class="text-5xl font-bold text-[#B3E3D7] mb-3 font-mono">24/7</div>
+          <div class="text-gray-300 font-semibold text-lg">Monitoramento</div>
+          <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mt-4 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="sobre.html" class="bg-[#B3E3D7] text-black px-10 py-4 rounded-xl font-semibold text-lg hover:bg-[#A0D9CD] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+          Conheça nosso método
+        </a>
+        <a href="contato.html" class="border-2 border-[#B3E3D7] text-[#B3E3D7] px-10 py-4 rounded-xl font-semibold text-lg hover:bg-[#B3E3D7] hover:text-black transition-all duration-300">
+          Fale conosco
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

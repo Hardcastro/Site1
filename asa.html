@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método ASA - AEther</title>
+  <meta name="description" content="Método ASA - Assess, Strategize, Adapt. A essência da análise transformadora para profissionais de dados e decisão." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body class="bg-black text-white font-body">
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
+  </div>
+  <!-- Navegação -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
+    <a href="index.html" class="nav-link">Início</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="asa.html" class="nav-link active">Método ASA</a>
+    <a href="projetos.html" class="nav-link">Projetos</a>
+    <a href="publicacoes.html" class="nav-link">Publicações</a>
+    <a href="contato.html" class="nav-link">Contato</a>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="px-6 py-16 max-w-6xl mx-auto">
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-[#B3E3D7]">Método ASA</h1>
+      <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+          Assess, Strategize, Adapt — a essência da análise transformadora para profissionais de dados e decisão.
+        </p>
+      </div>
+
+    <!-- 🔹 DESTACAR CADA ETAPA DO ASA -->
+  <div id="asa-fluxograma" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
+      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Assess</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Diagnóstico profundo do contexto e dos dados disponíveis.</p>
+    </div>
+    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
+      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Strategize</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Formulação de soluções estratégicas com estrutura definida.</p>
+    </div>
+    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
+      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Adapt</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Adaptação baseada em feedback e impacto.</p>
+    </div>
+  </div>
+
+
+        <!-- Strategize -->
+        <div class="card text-center">
+          <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
+            <circle cx="32" cy="32" r="14" stroke="#B3E3D7" stroke-width="3" />
+            <path d="M20 32h8l4-8 4 8h8" stroke="#F5C0B5" stroke-width="3" stroke-linejoin="round" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Strategize</h3>
+          <p class="text-gray-300">Formulação de soluções estratégicas com estrutura e foco definidos.</p>
+        </div>
+
+        <!-- Adapt -->
+        <div class="card text-center">
+          <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
+            <circle cx="32" cy="32" r="16" stroke="#B3E3D7" stroke-width="3" />
+            <path d="M24 44l8-8 8 8" stroke="#F5C0B5" stroke-width="4" stroke-linecap="round" />
+          </svg>
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Adapt</h3>
+          <p class="text-gray-300">Adaptação contínua baseada em feedback e medição de impacto real.</p>
+        </div>
+      </div>
+
+      <!-- Detalhamento do método -->
+      <div class="text-left max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold mb-6 text-[#B3E3D7] text-center">Como funciona na prática</h2>
+        <div class="space-y-6">
+          <div class="border-l-4 border-[#B3E3D7] pl-6">
+            <h4 class="text-lg font-semibold text-[#B3E3D7] mb-2">1. Assessment (Avaliação)</h4>
+            <p class="text-gray-300">Mapeamos o cenário atual, identificamos gaps de informação e definimos objetivos claros baseados em dados concretos.</p>
+          </div>
+          <div class="border-l-4 border-[#F5C0B5] pl-6">
+            <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">2. Strategy (Estratégia)</h4>
+            <p class="text-gray-300">Desenvolvemos roadmaps personalizados com ferramentas adequadas e métricas de sucesso bem definidas.</p>
+          </div>
+          <div class="border-l-4 border-[#AAB0B6] pl-6">
+            <h4 class="text-lg font-semibold text-[#AAB0B6] mb-2">3. Adaptation (Adaptação)</h4>
+            <p class="text-gray-300">Implementamos ciclos de melhoria contínua, ajustando estratégias conforme novos insights emergem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

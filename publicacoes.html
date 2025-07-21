@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publicações - AEther</title>
+  <meta name="description" content="Explore nossas publicações técnicas, análises e insights sobre Business Intelligence, Geoanálise e Web3." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body class="bg-black text-white font-body overflow-x-hidden">
+  <!-- Navegação -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
+    <a href="index.html" class="nav-link">Início</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="asa.html" class="nav-link">Método ASA</a>
+    <a href="projetos.html" class="nav-link">Projetos</a>
+    <a href="publicacoes.html" class="nav-link active">Publicações</a>
+    <a href="contato.html" class="nav-link">Contato</a>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="min-h-screen flex flex-col justify-center items-center px-4 relative">
+    <!-- Background Texture Interactive -->
+    <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+      <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+      <div class="geometric-pattern absolute inset-0"></div>
+      <div class="data-grid-overlay absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-6xl">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Publicações & Insights</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Explore nossos artigos técnicos, análises e insights sobre Business Intelligence, Geoanálise e Web3.
+        </p>
+      </div>
+
+      <!-- Grid de Publicações -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <!-- Publicação 1 -->
+        <a href="https://medium.com/@decastrobarreto/a-revolu%C3%A7%C3%A3o-dos-meios-de-pagamento-no-brasil-uma-an%C3%A1lise-de-2019-a-2024-5a5aaa46181a" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="publication-thumb group hover:scale-105 transition-all duration-300">
+          <div class="mb-4">
+            <span class="bg-[#B3E3D7] text-black px-3 py-1 rounded-full text-sm font-semibold">Análise Financeira</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7] group-hover:text-black transition-colors">
+            A Revolução dos Meios de Pagamento no Brasil
+          </h3>
+          <p class="text-gray-300 group-hover:text-gray-800 transition-colors mb-4 text-sm">
+            Uma análise detalhada do comportamento do mercado financeiro brasileiro entre 2019-2024, explorando tendências de pagamento digital.
+          </p>
+          <div class="flex items-center text-[#F5C0B5] group-hover:text-[#F5C0B5] text-sm">
+            <span>Ler artigo</span>
+            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Publicação 2 -->
+        <div class="publication-thumb opacity-75">
+          <div class="mb-4">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Geoanálise</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">
+            Análise Geoespacial de Dados Urbanos
+          </h3>
+          <p class="text-gray-300 mb-4 text-sm">
+            Metodologias avançadas para análise de padrões espaciais em ambientes urbanos usando GIS e Python.
+          </p>
+          <div class="flex items-center text-gray-400 text-sm">
+            <span>Em breve</span>
+          </div>
+        </div>
+
+        <!-- Publicação 3 -->
+        <div class="publication-thumb opacity-75">
+          <div class="mb-4">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Web3 Analytics</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">
+            Métricas Avançadas em DeFi
+          </h3>
+          <p class="text-gray-300 mb-4 text-sm">
+            Framework para análise de protocolos DeFi e métricas de liquidez em tempo real usando dados on-chain.
+          </p>
+          <div class="flex items-center text-gray-400 text-sm">
+            <span>Em desenvolvimento</span>
+          </div>
+        </div>
+
+        <!-- Publicação 4 -->
+        <div class="publication-thumb opacity-75">
+          <div class="mb-4">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Business Intelligence</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">
+            Dashboard Estratégico com Power BI
+          </h3>
+          <p class="text-gray-300 mb-4 text-sm">
+            Guia completo para criação de dashboards executivos focados em KPIs estratégicos e tomada de decisão.
+          </p>
+          <div class="flex items-center text-gray-400 text-sm">
+            <span>Em planejamento</span>
+          </div>
+        </div>
+
+        <!-- Publicação 5 -->
+        <div class="publication-thumb opacity-75">
+          <div class="mb-4">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Metodologia</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">
+            Método ASA na Prática
+          </h3>
+          <p class="text-gray-300 mb-4 text-sm">
+            Cases reais de aplicação do Método ASA (Assess, Strategize, Adapt) em projetos de análise de dados.
+          </p>
+          <div class="flex items-center text-gray-400 text-sm">
+            <span>Em planejamento</span>
+          </div>
+        </div>
+
+        <!-- Publicação 6 -->
+        <div class="publication-thumb opacity-75">
+          <div class="mb-4">
+            <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Tutorial</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">
+            Python para Análise Financeira
+          </h3>
+          <p class="text-gray-300 mb-4 text-sm">
+            Tutorial avançado usando pandas, numpy e matplotlib para análise de séries temporais financeiras.
+          </p>
+          <div class="flex items-center text-gray-400 text-sm">
+            <span>Em planejamento</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="text-center bg-gradient-to-r from-gray-900/50 to-gray-800/50 p-8 rounded-2xl border border-[#B3E3D7]/20">
+        <h2 class="text-2xl font-bold mb-4 text-[#B3E3D7]">Receba nossos insights</h2>
+        <p class="text-gray-300 mb-6 max-w-md mx-auto">
+          Assine nossa newsletter para receber análises exclusivas e insights sobre o mercado de dados.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+          <input 
+            type="email" 
+            placeholder="seu.email@exemplo.com"
+            class="flex-1 px-4 py-3 bg-gray-800 border border-[#B3E3D7]/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] transition-colors"
+          />
+          <button class="bg-[#B3E3D7] text-black px-6 py-3 rounded-lg font-semibold hover:bg-[#A0D9CD] transition-colors whitespace-nowrap">
+            Inscrever-se
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

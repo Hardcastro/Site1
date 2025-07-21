@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projetos & Cases - AEther</title>
+  <meta name="description" content="Conheça nossos projetos e cases de sucesso. Impacto real através de dados e estratégia." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body class="bg-black text-white font-body overflow-x-hidden">
+  <!-- Navegação -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
+    <a href="index.html" class="nav-link">Início</a>
+    <a href="sobre.html" class="nav-link">Sobre</a>
+    <a href="asa.html" class="nav-link">Método ASA</a>
+    <a href="projetos.html" class="nav-link active">Projetos</a>
+    <a href="publicacoes.html" class="nav-link">Publicações</a>
+    <a href="contato.html" class="nav-link">Contato</a>
+  </nav>
+
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 relative">
+    <div class="relative z-10 w-full max-w-6xl">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Projetos & Cases</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          Impacto real através de dados e estratégia. Conheça nossos cases de sucesso.
+        </p>
+      </div>
+
+      <!-- Grid de Projetos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <!-- Card 1 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Dashboard E-commerce Analytics</h3>
+          <p class="text-gray-300 mb-4">
+            Sistema completo de BI para e-commerce com análise de vendas, comportamento do cliente e previsões de demanda.
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-400 font-semibold">Concluído</span>
+            <span class="text-sm text-gray-400">+350% ROI</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Geoanálise Urbana</h3>
+          <p class="text-gray-300 mb-4">
+            Mapeamento e análise espacial para otimização de rotas logísticas e expansão territorial.
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-green-400 font-semibold">Concluído</span>
+            <span class="text-sm text-gray-400">-45% custos logísticos</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Análise Regulatória Crypto</h3>
+          <p class="text-gray-300 mb-4">
+            Estudo de impacto regulatório no mercado de criptomoedas com foco em compliance e risk management.
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-blue-400 font-semibold">Em desenvolvimento</span>
+            <span class="text-sm text-gray-400">Q2 2024</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Modelagem Preditiva ESG</h3>
+          <p class="text-gray-300 mb-4">
+            Modelagem preditiva para métricas ESG utilizando machine learning e análise de tendências sustentáveis.
+          </p>
+          <div class="flex items-center justify-between">
+            <span class="text-yellow-400 font-semibold">Em planejamento</span>
+            <span class="text-sm text-gray-400">Q3 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seção de Metodologia -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-[#B3E3D7]">Nossa Metodologia</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card text-center">
+            <div class="text-4xl font-bold text-[#B3E3D7] mb-4">01</div>
+            <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">Análise</h3>
+            <p class="text-gray-300">Diagnóstico profundo dos dados e necessidades do negócio.</p>
+          </div>
+          <div class="card text-center">
+            <div class="text-4xl font-bold text-[#B3E3D7] mb-4">02</div>
+            <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">Estratégia</h3>
+            <p class="text-gray-300">Desenvolvimento de soluções customizadas e escaláveis.</p>
+          </div>
+          <div class="card text-center">
+            <div class="text-4xl font-bold text-[#B3E3D7] mb-4">03</div>
+            <h3 class="text-xl font-semibold mb-3 text-[#B3E3D7]">Adaptação</h3>
+            <p class="text-gray-300">Implementação com ciclos de melhoria contínua.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center">
+        <h2 class="text-2xl font-bold mb-4 text-[#B3E3D7]">Tem um projeto em mente?</h2>
+        <p class="text-gray-300 mb-6">Vamos conversar sobre como podemos ajudar a transformar seus dados em insights valiosos.</p>
+        <a href="contato.html" class="inline-block bg-[#B3E3D7] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#A0D9CD] transition-colors">
+          Entre em Contato
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

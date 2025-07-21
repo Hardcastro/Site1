@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre - AEther</title>
+  <meta name="description" content="Conheça a AEther - Inteligência analítica com propósito, transformando dados complexos em clareza e impacto." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
+</head>
+<body class="bg-black text-white font-body">
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
+  </div>
+  <!-- Navegação -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
+    <a href="index.html" class="nav-link">Início</a>
+    <a href="sobre.html" class="nav-link active">Sobre</a>
+    <a href="asa.html" class="nav-link">Método ASA</a>
+    <a href="projetos.html" class="nav-link">Projetos</a>
+    <a href="publicacoes.html" class="nav-link">Publicações</a>
+    <a href="contato.html" class="nav-link">Contato</a>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <main class="px-6 py-16 max-w-6xl mx-auto">
+    <!-- Background Texture Interactive -->
+
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Sobre a AEther</h1>
+      <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+        Inteligência analítica com propósito: transformamos dados complexos em clareza e impacto.
+      </p>
+    </div>
+
+    <!-- 🔹 LINHA DO TEMPO INTERATIVA -->
+  <div id="linha-do-tempo" class="w-full max-w-3xl mx-auto mb-16 relative">
+    <svg id="linha-do-tempo-svg" viewBox="0 0 600 300" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 200 C150 100, 450 300, 550 200" stroke="#B3E3D7" stroke-width="4" fill="none"/>
+      <circle cx="50" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
+      <circle cx="300" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
+      <circle cx="550" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
+      <text x="50" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Fundação</text>
+      <text x="300" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Expansão</text>
+      <text x="550" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Futuro</text>
+    </svg>
+  </div>
+
+      <!-- 🔹 CARDS DE MISSÃO, VISÃO E VALORES COM HOVER -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Missão</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Democratizar o acesso à inteligência analítica através do Método ASA.</p>
+    </div>
+    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Visão</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Ser referência em soluções analíticas que geram impacto real.</p>
+    </div>
+    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
+      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossos Valores</h3>
+      <p class="text-gray-300 group-hover:text-gray-100">Precisão, inovação e compromisso com resultados tangíveis.</p>
+    </div>
+  </div>
+
+</main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
