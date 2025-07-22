@@ -261,7 +261,7 @@ main.internal-page {
   border: 1px solid rgba(179, 227, 215, 0.25);
   color: var(--text-primary);
   border-radius: 1.5rem;
-  padding: 2.5rem;
+  padding: 2rem;
   box-shadow: 
     0 15px 50px rgba(0, 0, 0, 0.5),
     0 5px 20px rgba(179, 227, 215, 0.1),
@@ -274,6 +274,26 @@ main.internal-page {
   position: relative;
   overflow: hidden;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  will-change: transform;
+}
+
+/* === Card Variants === */
+.card-compact {
+  padding: 1.5rem;
+}
+
+.card-large {
+  padding: 2.5rem;
+}
+
+.card-stats {
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.card-project {
+  padding: 2rem;
+  border-left: 3px solid transparent;
 }
 
 .card::before {
@@ -299,19 +319,45 @@ main.internal-page {
 
 .card:hover,
 .card:focus-visible {
-  transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateY(-8px) scale(1.02);
+  transform: perspective(1000px) rotateX(3deg) rotateY(3deg) translateY(-12px) scale(1.03);
   box-shadow: 
-    0 20px 60px rgba(179, 227, 215, 0.3),
-    0 8px 25px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(179, 227, 215, 0.15),
-    inset 0 1px 0 rgba(179, 227, 215, 0.3),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    0 25px 80px rgba(179, 227, 215, 0.4),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(179, 227, 215, 0.25),
+    inset 0 2px 0 rgba(179, 227, 215, 0.4),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.3);
   border-color: var(--primary-mint);
   outline: none;
   background: linear-gradient(135deg, 
     rgba(26, 31, 35, 0.98) 0%, 
     rgba(42, 49, 56, 0.98) 50%,
     rgba(26, 31, 35, 0.98) 100%);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(179, 227, 215, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card:hover::after {
+  width: 200%;
+  height: 200%;
+  opacity: 1;
+}
+
+.card:active {
+  transform: perspective(1000px) rotateX(2deg) rotateY(2deg) translateY(-8px) scale(1.01);
+  transition: all 0.1s ease;
 }
 
 /* === Estado de Loading para Cards === */
@@ -670,6 +716,42 @@ main.internal-page {
 }
 
 /* === Responsividade da Textura === */
+/* === Enhanced Mobile Responsiveness === */
+@media (max-width: 480px) {
+  #particles-canvas {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .card {
+    padding: 1.25rem;
+    margin: 0.75rem 0;
+    border-radius: 1rem;
+  }
+
+  .card:hover {
+    transform: perspective(1000px) translateY(-6px) scale(1.02);
+  }
+
+  .filter-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+
+  nav {
+    padding: 0.5rem;
+    min-height: 70px;
+    gap: 0.5rem;
+  }
+
+  nav a.nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    min-height: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   #particles-canvas {
     opacity: 0.3;
@@ -687,33 +769,38 @@ main.internal-page {
     padding: 0.75rem 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 60px;
+    min-height: 65px;
   }
 
   nav a.nav-link {
-    padding: 0.4rem 0.8rem;
-    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
-    min-height: 36px;
-    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    min-height: 44px;
+    border-radius: 10px;
   }
 
   .card {
-    padding: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
     margin: 0.5rem 0;
+    border-radius: 1.25rem;
+  }
+
+  .card:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg) translateY(-8px) scale(1.02);
   }
 
   .publication-thumb {
     max-width: 100%;
-    padding: 1rem;
+    padding: 1.25rem;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
   }
 
   main {
-    padding: clamp(8rem, 15vw, 10rem) clamp(0.75rem, 2vw, 1rem) 2rem;
+    padding: clamp(8rem, 15vw, 10rem) clamp(1rem, 2vw, 1.5rem) 2rem;
   }
 
   section {
-    padding: clamp(8rem, 15vw, 10rem) clamp(0.75rem, 2vw, 1rem) 2rem;
+    padding: clamp(8rem, 15vw, 10rem) clamp(1rem, 2vw, 1.5rem) 2rem;
   }
 
   .grid-responsive {
@@ -733,13 +820,49 @@ main.internal-page {
   .flex-responsive {
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .btn, .btn-secondary {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     margin: 0 auto;
+    padding: 1rem 1.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 10px;
+  }
+}
+
+/* === Tablet Responsiveness === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    padding: clamp(1.75rem, 3vw, 2.25rem);
+  }
+
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+
+  nav a.nav-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* === Large Screen Optimizations === */
+@media (min-width: 1200px) {
+  .card:hover {
+    transform: perspective(1000px) rotateX(4deg) rotateY(4deg) translateY(-15px) scale(1.04);
+  }
+
+  .grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.25rem;
   }
 }
 
@@ -764,7 +887,7 @@ main.internal-page {
   pointer-events: none;
 }
 
-/* === Sistema de Botões Aprimorado === */
+/* === Sistema de Botões Padronizado === */
 button,
 input[type="submit"],
 .btn {
@@ -773,7 +896,7 @@ input[type="submit"],
   background: linear-gradient(135deg, var(--primary-mint), var(--accent-hover));
   color: var(--primary-black);
   border: none;
-  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  padding: 1rem 2rem;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -785,8 +908,28 @@ input[type="submit"],
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 48px; /* Acessibilidade - área de toque mínima */
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  min-height: 48px;
+  font-size: 1rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* === Variações de Tamanho de Botões === */
+.btn-sm {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  min-height: 40px;
+}
+
+.btn-lg {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  min-height: 56px;
+}
+
+.btn-icon {
+  padding: 1rem;
+  min-width: 48px;
 }
 
 button::before,
@@ -1416,17 +1559,23 @@ nav:hover {
 
 /* === Filtros de Projetos === */
 .filter-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: 1px solid rgba(179, 227, 215, 0.3);
-  border-radius: 8px;
+  border-radius: 12px;
   background: transparent;
   color: var(--text-primary);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .filter-btn::before {
@@ -1593,8 +1742,16 @@ textarea.error {
 }
 nav {
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(179, 227, 215, 0.1);
-  height: var(--nav-height);
+  border-bottom: 1px solid rgba(179, 227, 215, 0.2);
+  min-height: var(--nav-height);
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .nav-link {
@@ -1605,11 +1762,43 @@ nav {
   position: relative;
   padding: 0.75rem 1rem;
   border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--primary-mint);
+  background: rgba(179, 227, 215, 0.1);
+  outline: 2px solid var(--primary-mint);
+  outline-offset: 2px;
 }
 
 /* Ensure content doesn't hide behind fixed nav */
 .internal-page {
-  padding-top: var(--nav-height);
+  padding-top: calc(var(--nav-height) + 1rem);
+}
+
+/* Skip link accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-mint);
+  color: var(--primary-black);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 100;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 6px;
 }
 
 body {

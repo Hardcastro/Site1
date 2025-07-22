@@ -1009,37 +1009,108 @@ function initProjectFilters() {
     button.addEventListener('click', () => {
       const filter = button.getAttribute('data-filter');
 
-      // Atualizar botões ativos
-      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Atualizar botões ativos com animação
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        gsap.to(btn, { scale: 1, duration: 0.2 });
+      });
       button.classList.add('active');
+      gsap.to(button, { scale: 1.05, duration: 0.2, yoyo: true, repeat: 1 });
 
-      // Filtrar cards
+      // Filtrar cards com animações aprimoradas
+      const cardsToShow = [];
+      const cardsToHide = [];
+
       projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
         const shouldShow = filter === 'all' || category === filter;
-
+        
         if (shouldShow) {
-          gsap.to(card, {
-            opacity: 1,
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-          card.style.display = 'block';
+          cardsToShow.push(card);
         } else {
-          gsap.to(card, {
-            opacity: 0,
-            scale: 0.8,
-            duration: 0.3,
-            ease: "power2.in",
-            onComplete: () => {
-              card.style.display = 'none';
-            }
-          });
+          cardsToHide.push(card);
         }
       });
+
+      // Animar saída dos cards escondidos
+      if (cardsToHide.length > 0) {
+        gsap.to(cardsToHide, {
+          opacity: 0,
+          y: -20,
+          scale: 0.9,
+          duration: 0.4,
+          stagger: 0.05,
+          ease: "power2.in",
+          onComplete: () => {
+            cardsToHide.forEach(card => {
+              card.style.display = 'none';
+            });
+          }
+        });
+      }
+
+      // Animar entrada dos cards visíveis com fade-in aprimorado
+      setTimeout(() => {
+        cardsToShow.forEach(card => {
+          card.style.display = 'block';
+          gsap.fromTo(card, {
+            opacity: 0,
+            y: 30,
+            scale: 0.8,
+            rotationX: -15
+          }, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotationX: 0,
+            duration: 0.6,
+            ease: "back.out(1.7)",
+            delay: Math.random() * 0.2
+          });
+        });
+      }, cardsToHide.length > 0 ? 200 : 0);
+
+      // Efeito de partículas no botão clicado
+      createFilterParticles(button);
     });
   });
+}
+
+// Função para criar efeito de partículas nos filtros
+function createFilterParticles(button) {
+  const rect = button.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  for (let i = 0; i < 8; i++) {
+    const particle = document.createElement('div');
+    particle.style.cssText = `
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: var(--primary-mint);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1000;
+      left: ${centerX}px;
+      top: ${centerY}px;
+      box-shadow: 0 0 8px rgba(179, 227, 215, 0.8);
+    `;
+    document.body.appendChild(particle);
+
+    const angle = (i / 8) * Math.PI * 2;
+    const distance = 50 + Math.random() * 30;
+
+    gsap.to(particle, {
+      x: Math.cos(angle) * distance,
+      y: Math.sin(angle) * distance,
+      opacity: 0,
+      scale: 0,
+      duration: 0.8 + Math.random() * 0.4,
+      ease: "power2.out",
+      onComplete: () => particle.remove()
+    });
+  }
 }
 
 function initInteractiveTimeline() {
