@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sobre - AEther</title>
+  <title>Sobre - AEther | Nossa História e Metodologia</title>
   <meta name="description" content="Conheça a AEther - Inteligência analítica com propósito, transformando dados complexos em clareza e impacto." />
+  <meta name="keywords" content="AEther, Sobre, História, Metodologia, Missão, Visão, Valores" />
+  <meta name="author" content="AEther SoftQuant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aether.com/sobre.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sobre a AEther - Nossa História e Metodologia" />
+  <meta property="og:description" content="Conheça nossa jornada, missão e valores. Inteligência analítica com propósito." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aether.com/sobre.html" />
+  <meta property="og:image" content="https://aether.com/assets/aether_mascot_character.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sobre a AEther - Nossa História e Metodologia" />
+  <meta name="twitter:description" content="Conheça nossa jornada, missão e valores." />
+  <meta name="twitter:image" content="https://aether.com/assets/aether_mascot_character.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -26,6 +43,9 @@
     <div class="geometric-pattern absolute inset-0"></div>
     <div class="data-grid-overlay absolute inset-0"></div>
   </div>
+
+  <!-- Indicador de Progresso de Scroll -->
+  <div class="scroll-indicator" id="scroll-progress"></div>
   <!-- Navegação -->
   <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
     <a href="index.html" class="nav-link">Início</a>
@@ -37,7 +57,7 @@
   </nav>
 
   <!-- Conteúdo Principal -->
-  <main class="px-6 py-16 max-w-6xl mx-auto">
+  <main class="px-6 py-16 pt-24 max-w-6xl mx-auto">
     <!-- Background Texture Interactive -->
 
     <div class="relative z-10">
@@ -48,33 +68,60 @@
     </div>
 
     <!-- 🔹 LINHA DO TEMPO INTERATIVA -->
-  <div id="linha-do-tempo" class="w-full max-w-3xl mx-auto mb-16 relative">
-    <svg id="linha-do-tempo-svg" viewBox="0 0 600 300" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
+  <div id="linha-do-tempo" class="w-full max-w-4xl mx-auto mb-16 relative">
+    <svg id="linha-do-tempo-svg" viewBox="0 0 600 300" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline da AEther">
       <path d="M50 200 C150 100, 450 300, 550 200" stroke="#B3E3D7" stroke-width="4" fill="none"/>
-      <circle cx="50" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
-      <circle cx="300" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
-      <circle cx="550" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer"/>
-      <text x="50" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Fundação</text>
-      <text x="300" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Expansão</text>
-      <text x="550" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">Futuro</text>
+      <circle cx="50" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="fundacao" tabindex="0" role="button" aria-label="Ver detalhes de 2023"/>
+      <circle cx="300" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="expansao" tabindex="0" role="button" aria-label="Ver detalhes de 2024"/>
+      <circle cx="550" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="futuro" tabindex="0" role="button" aria-label="Ver detalhes de 2025+"/>
+      <text x="50" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2023</text>
+      <text x="300" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2024</text>
+      <text x="550" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2025+</text>
     </svg>
+    
+    <!-- Detalhes da Linha do Tempo -->
+    <div class="mt-8 space-y-4">
+      <div id="timeline-fundacao" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
+        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Fundação da AEther (2023)</h4>
+        <p class="text-gray-300">Início da jornada com foco em democratizar o acesso à inteligência analítica. Desenvolvimento do Método ASA e primeiros projetos piloto.</p>
+      </div>
+      <div id="timeline-expansao" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
+        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Expansão e Crescimento (2024)</h4>
+        <p class="text-gray-300">Consolidação da metodologia, expansão da equipe e implementação de projetos de grande escala em diferentes setores.</p>
+      </div>
+      <div id="timeline-futuro" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
+        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Visão de Futuro (2025+)</h4>
+        <p class="text-gray-300">Expansão internacional, desenvolvimento de IA proprietária e consolidação como referência global em analytics estratégicos.</p>
+      </div>
+    </div>
   </div>
 
       <!-- 🔹 CARDS DE MISSÃO, VISÃO E VALORES COM HOVER -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Missão</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Democratizar o acesso à inteligência analítica através do Método ASA.</p>
+    <div class="grid-responsive text-left">
+      <div class="card group scale-in delay-300 tooltip" data-tooltip="Nossa razão de existir">
+        <svg class="w-8 h-8 text-[#B3E3D7] mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Missão</h3>
+        <p class="text-gray-300 group-hover:text-gray-100">Democratizar o acesso à inteligência analítica através do Método ASA.</p>
+      </div>
+      <div class="card group scale-in delay-400 tooltip" data-tooltip="Onde queremos chegar">
+        <svg class="w-8 h-8 text-[#B3E3D7] mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Visão</h3>
+        <p class="text-gray-300 group-hover:text-gray-100">Ser referência em soluções analíticas que geram impacto real.</p>
+      </div>
+      <div class="card group scale-in delay-500 tooltip" data-tooltip="Nossos princípios fundamentais">
+        <svg class="w-8 h-8 text-[#B3E3D7] mb-4 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+        </svg>
+        <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossos Valores</h3>
+        <p class="text-gray-300 group-hover:text-gray-100">Precisão, inovação e compromisso com resultados tangíveis.</p>
+      </div>
     </div>
-    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossa Visão</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Ser referência em soluções analíticas que geram impacto real.</p>
-    </div>
-    <div class="card group hover:shadow-lg hover:shadow-[#B3E3D770] transition-all duration-300 p-6 rounded-xl bg-[#111]">
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Nossos Valores</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Precisão, inovação e compromisso com resultados tangíveis.</p>
-    </div>
-  </div>
 
 </main>
 

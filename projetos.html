@@ -1,11 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projetos & Cases - AEther</title>
+  <title>Projetos & Cases - AEther | Portfólio de Sucessos</title>
   <meta name="description" content="Conheça nossos projetos e cases de sucesso. Impacto real através de dados e estratégia." />
+  <meta name="keywords" content="Projetos, Cases, Portfólio, Business Intelligence, Geoanálise, Web3, ESG Analytics" />
+  <meta name="author" content="AEther SoftQuant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aether.com/projetos.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projetos & Cases de Sucesso - AEther" />
+  <meta property="og:description" content="Explore nosso portfólio de projetos bem-sucedidos em BI, Geoanálise e Web3." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aether.com/projetos.html" />
+  <meta property="og:image" content="https://aether.com/assets/aether_hero_illustration.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projetos & Cases de Sucesso - AEther" />
+  <meta name="twitter:description" content="Explore nosso portfólio de projetos bem-sucedidos." />
+  <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -38,45 +54,76 @@
     <div class="data-grid-overlay absolute inset-0"></div>
   </div>
 
+  <!-- Indicador de Progresso de Scroll -->
+  <div class="scroll-indicator" id="scroll-progress"></div>
+
   <!-- Conteúdo Principal -->
-  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 relative">
+  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-20 relative">
     <div class="relative z-10 w-full max-w-6xl">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Projetos & Cases</h1>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6 fade-in">Projetos & Cases</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto fade-in delay-200">
           Impacto real através de dados e estratégia. Conheça nossos cases de sucesso.
         </p>
+        
+        <!-- Filtros -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8 fade-in delay-300">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="bi">Business Intelligence</button>
+          <button class="filter-btn" data-filter="geo">Geoanálise</button>
+          <button class="filter-btn" data-filter="web3">Web3</button>
+          <button class="filter-btn" data-filter="esg">ESG</button>
+        </div>
       </div>
 
       <!-- Grid de Projetos -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16 w-full" id="projects-grid">
         <!-- Card 1 -->
-        <div class="card">
+        <div class="card project-card scale-in delay-400" data-category="bi">
+          <div class="mb-4">
+            <span class="bg-[#B3E3D7] text-black px-3 py-1 rounded-full text-sm font-semibold">Business Intelligence</span>
+          </div>
           <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Dashboard E-commerce Analytics</h3>
           <p class="text-gray-300 mb-4">
             Sistema completo de BI para e-commerce com análise de vendas, comportamento do cliente e previsões de demanda.
           </p>
           <div class="flex items-center justify-between">
             <span class="text-green-400 font-semibold">Concluído</span>
-            <span class="text-sm text-gray-400">+350% ROI</span>
+            <span class="text-sm text-gray-400 font-mono">+350% ROI</span>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Power BI</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Python</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">SQL</span>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="card">
+        <div class="card project-card scale-in delay-500" data-category="geo">
+          <div class="mb-4">
+            <span class="bg-[#F5C0B5] text-black px-3 py-1 rounded-full text-sm font-semibold">Geoanálise</span>
+          </div>
           <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Geoanálise Urbana</h3>
           <p class="text-gray-300 mb-4">
             Mapeamento e análise espacial para otimização de rotas logísticas e expansão territorial.
           </p>
           <div class="flex items-center justify-between">
             <span class="text-green-400 font-semibold">Concluído</span>
-            <span class="text-sm text-gray-400">-45% custos logísticos</span>
+            <span class="text-sm text-gray-400 font-mono">-45% custos</span>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">GIS</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">PostGIS</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">QGIS</span>
           </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="card">
+        <div class="card project-card scale-in delay-600" data-category="web3">
+          <div class="mb-4">
+            <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Web3 Analytics</span>
+          </div>
           <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Análise Regulatória Crypto</h3>
           <p class="text-gray-300 mb-4">
             Estudo de impacto regulatório no mercado de criptomoedas com foco em compliance e risk management.
@@ -85,10 +132,18 @@
             <span class="text-blue-400 font-semibold">Em desenvolvimento</span>
             <span class="text-sm text-gray-400">Q2 2024</span>
           </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Blockchain</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">DeFi</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Smart Contracts</span>
+          </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="card">
+        <div class="card project-card scale-in delay-700" data-category="esg">
+          <div class="mb-4">
+            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">ESG Analytics</span>
+          </div>
           <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Modelagem Preditiva ESG</h3>
           <p class="text-gray-300 mb-4">
             Modelagem preditiva para métricas ESG utilizando machine learning e análise de tendências sustentáveis.
@@ -96,6 +151,11 @@
           <div class="flex items-center justify-between">
             <span class="text-yellow-400 font-semibold">Em planejamento</span>
             <span class="text-sm text-gray-400">Q3 2024</span>
+          </div>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Machine Learning</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Sustainability</span>
+            <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Compliance</span>
           </div>
         </div>
       </div>

@@ -1,11 +1,27 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publicações - AEther</title>
+  <title>Publicações - AEther | Insights e Análises Técnicas</title>
   <meta name="description" content="Explore nossas publicações técnicas, análises e insights sobre Business Intelligence, Geoanálise e Web3." />
+  <meta name="keywords" content="Publicações, Artigos, Insights, Análises, Blog, Business Intelligence, Geoanálise, Web3" />
+  <meta name="author" content="AEther SoftQuant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aether.com/publicacoes.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Publicações e Insights - AEther" />
+  <meta property="og:description" content="Artigos técnicos e análises sobre BI, Geoanálise e Web3 Analytics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aether.com/publicacoes.html" />
+  <meta property="og:image" content="https://aether.com/assets/aether_hero_illustration.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Publicações e Insights - AEther" />
+  <meta name="twitter:description" content="Artigos técnicos e análises especializadas." />
+  <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -31,20 +47,25 @@
     <a href="contato.html" class="nav-link">Contato</a>
   </nav>
 
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
+  </div>
+
+  <!-- Indicador de Progresso de Scroll -->
+  <div class="scroll-indicator" id="scroll-progress"></div>
+
   <!-- Conteúdo Principal -->
-  <main class="min-h-screen flex flex-col justify-center items-center px-4 relative">
-    <!-- Background Texture Interactive -->
-    <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
-      <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-      <div class="geometric-pattern absolute inset-0"></div>
-      <div class="data-grid-overlay absolute inset-0"></div>
-    </div>
+  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-20 relative">
 
     <div class="relative z-10 w-full max-w-6xl">
       <!-- Header -->
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Publicações & Insights</h1>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6 fade-in">Publicações & Insights</h1>
+        <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mb-6 rounded-full fade-in delay-200"></div>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto fade-in delay-300">
           Explore nossos artigos técnicos, análises e insights sobre Business Intelligence, Geoanálise e Web3.
         </p>
       </div>

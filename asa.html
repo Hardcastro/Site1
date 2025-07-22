@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Método ASA - AEther</title>
-  <meta name="description" content="Método ASA - Assess, Strategize, Adapt. A essência da análise transformadora para profissionais de dados e decisão." />
+  <title>Método ASA - AEther | Assess, Strategize, Adapt</title>
+  <meta name="description" content="Conheça o Método ASA: Assess, Strategize, Adapt - Nossa abordagem revolucionária para análise de dados e tomada de decisão estratégica." />
+  <meta name="keywords" content="Método ASA, Assess, Strategize, Adapt, Metodologia, Análise de Dados, Estratégia" />
+  <meta name="author" content="AEther SoftQuant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aether.com/asa.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Método ASA - Assess, Strategize, Adapt" />
+  <meta property="og:description" content="Nossa metodologia revolucionária que transforma dados brutos em decisões estratégicas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aether.com/asa.html" />
+  <meta property="og:image" content="https://aether.com/assets/aether_hero_illustration.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Método ASA - Assess, Strategize, Adapt" />
+  <meta name="twitter:description" content="Metodologia revolucionária para análise de dados e decisões estratégicas." />
+  <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -18,14 +35,47 @@
 
   <!-- Global Styles -->
   <link rel="stylesheet" href="styles/global.css" />
+<<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método ASA - Abordagem Sistemática de Análise | AEther</title>
+  <meta name="description" content="Conheça o Método ASA da AEther: uma abordagem sistemática que combina Absorção, Síntese e Ação para transformar dados em resultados concretos." />
+  <meta name="keywords" content="método ASA, metodologia de análise, absorção de dados, síntese analítica, ação estratégica, consultoria em dados" />
+  <meta name="author" content="AEther Analytics" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://aether-analytics.com/asa.html" />
+  <meta property="og:title" content="Método ASA - Abordagem Sistemática de Análise" />
+  <meta property="og:description" content="Uma metodologia exclusiva que combina Absorção, Síntese e Ação para maximizar o valor dos seus dados." />
+  <meta property="og:site_name" content="AEther Analytics" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://aether-analytics.com/asa.html" />
+  <meta property="twitter:title" content="Método ASA - Abordagem Sistemática de Análise" />
+  <meta property="twitter:description" content="Uma metodologia exclusiva que combina Absorção, Síntese e Ação para maximizar o valor dos seus dados." />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://aether-analytics.com/asa.html" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+  <!-- TailwindCSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="styles/global.css" />
 </head>
-<body class="bg-black text-white font-body">
-  <!-- Background Texture Interactive -->
-  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
-    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-    <div class="geometric-pattern absolute inset-0"></div>
-    <div class="data-grid-overlay absolute inset-0"></div>
-  </div>
+<body class="bg-black text-white font-body overflow-x-hidden">
+  <!-- Link de acessibilidade -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
   <!-- Navegação -->
   <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
     <a href="index.html" class="nav-link">Início</a>
@@ -36,77 +86,219 @@
     <a href="contato.html" class="nav-link">Contato</a>
   </nav>
 
-  <!-- Conteúdo Principal -->
-  <main class="px-6 py-16 max-w-6xl mx-auto">
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-[#B3E3D7]">Método ASA</h1>
-      <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-          Assess, Strategize, Adapt — a essência da análise transformadora para profissionais de dados e decisão.
-        </p>
-      </div>
-
-    <!-- 🔹 DESTACAR CADA ETAPA DO ASA -->
-  <div id="asa-fluxograma" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
-      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Assess</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Diagnóstico profundo do contexto e dos dados disponíveis.</p>
-    </div>
-    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
-      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"/></svg>
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Strategize</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Formulação de soluções estratégicas com estrutura definida.</p>
-    </div>
-    <div class="card text-center group hover:bg-[#0D1B1E] transition-colors duration-300 p-6 rounded-xl bg-[#111]">
-      <svg class="mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 w-12 h-12 text-[#B3E3D7]" fill="currentColor" viewBox="0 0 24 24"><polygon points="12,2 22,22 2,22"/></svg>
-      <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7] group-hover:text-white">Adapt</h3>
-      <p class="text-gray-300 group-hover:text-gray-100">Adaptação baseada em feedback e impacto.</p>
-    </div>
+  <!-- Background Texture Interactive -->
+  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
+    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
+    <div class="geometric-pattern absolute inset-0"></div>
+    <div class="data-grid-overlay absolute inset-0"></div>
   </div>
 
+  <!-- Indicador de Progresso de Scroll -->
+  <div class="scroll-indicator" id="scroll-progress"></div>
 
-        <!-- Strategize -->
-        <div class="card text-center">
-          <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
-            <circle cx="32" cy="32" r="14" stroke="#B3E3D7" stroke-width="3" />
-            <path d="M20 32h8l4-8 4 8h8" stroke="#F5C0B5" stroke-width="3" stroke-linejoin="round" />
-          </svg>
-          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Strategize</h3>
-          <p class="text-gray-300">Formulação de soluções estratégicas com estrutura e foco definidos.</p>
+  <!-- Conteúdo Principal -->
+  <main id="main-content" class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-20 relative">
+    <!-- Header -->
+    <div class="text-center mb-16 relative z-10">
+      <h1 class="text-4xl md:text-6xl font-bold text-[#B3E3D7] mb-6 fade-in">Método ASA</h1>
+      <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mb-6 rounded-full fade-in delay-200"></div>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto fade-in delay-300">
+        Uma metodologia revolucionária que transforma dados brutos em decisões estratégicas através de três pilares fundamentais: <span class="text-[#B3E3D7] font-semibold">Assess</span>, <span class="text-[#F5C0B5] font-semibold">Strategize</span> e <span class="text-[#B3E3D7] font-semibold">Adapt</span>.
+      </p>
+    </div>
+
+    <!-- Fases do Método ASA -->
+    <div class="w-full max-w-6xl mb-20 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Fase 1: Assess -->
+        <div class="card group scale-in delay-400 cursor-pointer hover:scale-105 transition-all duration-500" id="assess-card">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-[#B3E3D7] to-[#A0D9CD] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-[#B3E3D7] group-hover:text-white transition-colors">01. Assess</h3>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors leading-relaxed">
+              Avaliação profunda dos dados disponíveis, identificação de padrões ocultos e diagnóstico da situação atual através de análise exploratória avançada.
+            </p>
+          </div>
+          <div class="mt-6 p-4 bg-gray-900/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li>• Análise exploratória de dados</li>
+              <li>• Identificação de padrões</li>
+              <li>• Diagnóstico situacional</li>
+              <li>• Mapeamento de fontes</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Adapt -->
-        <div class="card text-center">
-          <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4">
-            <circle cx="32" cy="32" r="16" stroke="#B3E3D7" stroke-width="3" />
-            <path d="M24 44l8-8 8 8" stroke="#F5C0B5" stroke-width="4" stroke-linecap="round" />
-          </svg>
-          <h3 class="text-xl font-semibold mb-4 text-[#B3E3D7]">Adapt</h3>
-          <p class="text-gray-300">Adaptação contínua baseada em feedback e medição de impacto real.</p>
+        <!-- Fase 2: Strategize -->
+        <div class="card group scale-in delay-500 cursor-pointer hover:scale-105 transition-all duration-500" id="strategize-card">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-[#F5C0B5] to-[#E5A094] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-[#F5C0B5] group-hover:text-white transition-colors">02. Strategize</h3>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors leading-relaxed">
+              Desenvolvimento de estratégias baseadas em insights, criação de modelos preditivos e definição de KPIs estratégicos para tomada de decisão.
+            </p>
+          </div>
+          <div class="mt-6 p-4 bg-gray-900/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li>• Modelagem preditiva</li>
+              <li>• Definição de KPIs</li>
+              <li>• Estratégias data-driven</li>
+              <li>• Roadmap de implementação</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fase 3: Adapt -->
+        <div class="card group scale-in delay-600 cursor-pointer hover:scale-105 transition-all duration-500" id="adapt-card">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-gradient-to-br from-[#B3E3D7] to-[#F5C0B5] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
+              <svg class="w-10 h-10 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-[#B3E3D7] group-hover:text-white transition-colors">03. Adapt</h3>
+            <p class="text-gray-300 group-hover:text-gray-100 transition-colors leading-relaxed">
+              Implementação adaptativa com ciclos de melhoria contínua, monitoramento em tempo real e ajustes baseados em feedback e novos dados.
+            </p>
+          </div>
+          <div class="mt-6 p-4 bg-gray-900/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ul class="text-sm text-gray-400 space-y-2">
+              <li>• Implementação iterativa</li>
+              <li>• Monitoramento contínuo</li>
+              <li>• Ajustes em tempo real</li>
+              <li>• Feedback loops</li>
+            </ul>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Detalhamento do método -->
-      <div class="text-left max-w-4xl mx-auto">
-        <h2 class="text-2xl font-bold mb-6 text-[#B3E3D7] text-center">Como funciona na prática</h2>
-        <div class="space-y-6">
-          <div class="border-l-4 border-[#B3E3D7] pl-6">
-            <h4 class="text-lg font-semibold text-[#B3E3D7] mb-2">1. Assessment (Avaliação)</h4>
-            <p class="text-gray-300">Mapeamos o cenário atual, identificamos gaps de informação e definimos objetivos claros baseados em dados concretos.</p>
-          </div>
-          <div class="border-l-4 border-[#F5C0B5] pl-6">
-            <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">2. Strategy (Estratégia)</h4>
-            <p class="text-gray-300">Desenvolvemos roadmaps personalizados com ferramentas adequadas e métricas de sucesso bem definidas.</p>
-          </div>
-          <div class="border-l-4 border-[#AAB0B6] pl-6">
-            <h4 class="text-lg font-semibold text-[#AAB0B6] mb-2">3. Adaptation (Adaptação)</h4>
-            <p class="text-gray-300">Implementamos ciclos de melhoria contínua, ajustando estratégias conforme novos insights emergem.</p>
-          </div>
+    <!-- Visualização Interativa do Processo -->
+    <div class="w-full max-w-4xl mb-20 relative z-10">
+      <h2 class="text-3xl font-bold text-center mb-12 text-[#B3E3D7] fade-in">Fluxo do Processo</h2>
+      <div class="relative">
+        <svg viewBox="0 0 800 200" class="w-full h-auto" id="process-flow">
+          <!-- Linha de conexão -->
+          <path d="M100 100 Q250 50 400 100 Q550 150 700 100" stroke="#B3E3D7" stroke-width="3" fill="none" class="opacity-50" id="connection-line"/>
+          
+          <!-- Círculos do processo -->
+          <circle cx="100" cy="100" r="30" fill="#B3E3D7" class="cursor-pointer hover:scale-110 transition-transform" data-phase="assess"/>
+          <circle cx="400" cy="100" r="30" fill="#F5C0B5" class="cursor-pointer hover:scale-110 transition-transform" data-phase="strategize"/>
+          <circle cx="700" cy="100" r="30" fill="#B3E3D7" class="cursor-pointer hover:scale-110 transition-transform" data-phase="adapt"/>
+          
+          <!-- Textos -->
+          <text x="100" y="105" text-anchor="middle" fill="black" font-weight="bold" font-size="14">A</text>
+          <text x="400" y="105" text-anchor="middle" fill="black" font-weight="bold" font-size="14">S</text>
+          <text x="700" y="105" text-anchor="middle" fill="black" font-weight="bold" font-size="14">A</text>
+          
+          <!-- Labels -->
+          <text x="100" y="150" text-anchor="middle" fill="#B3E3D7" font-size="12">ASSESS</text>
+          <text x="400" y="150" text-anchor="middle" fill="#F5C0B5" font-size="12">STRATEGIZE</text>
+          <text x="700" y="150" text-anchor="middle" fill="#B3E3D7" font-size="12">ADAPT</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Benefícios do Método -->
+    <div class="w-full max-w-6xl mb-20 relative z-10">
+      <h2 class="text-3xl font-bold text-center mb-12 text-[#B3E3D7] fade-in">Benefícios Comprovados</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card text-center scale-in delay-700 tooltip" data-tooltip="Redução significativa no tempo de análise">
+          <div class="text-4xl font-bold text-[#B3E3D7] mb-3 font-mono bounce-subtle">-60%</div>
+          <div class="text-gray-300 font-semibold">Tempo de Análise</div>
         </div>
+        <div class="card text-center scale-in delay-800 tooltip" data-tooltip="Aumento na precisão das previsões">
+          <div class="text-4xl font-bold text-[#F5C0B5] mb-3 font-mono bounce-subtle">+85%</div>
+          <div class="text-gray-300 font-semibold">Precisão Preditiva</div>
+        </div>
+        <div class="card text-center scale-in delay-900 tooltip" data-tooltip="ROI médio dos projetos implementados">
+          <div class="text-4xl font-bold text-[#B3E3D7] mb-3 font-mono bounce-subtle">+340%</div>
+          <div class="text-gray-300 font-semibold">ROI Médio</div>
+        </div>
+        <div class="card text-center scale-in delay-1000 tooltip" data-tooltip="Redução no tempo de implementação">
+          <div class="text-4xl font-bold text-[#F5C0B5] mb-3 font-mono bounce-subtle">-45%</div>
+          <div class="text-gray-300 font-semibold">Tempo de Deploy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center relative z-10">
+      <h2 class="text-2xl font-bold mb-4 text-[#B3E3D7] fade-in">Pronto para transformar seus dados?</h2>
+      <p class="text-gray-300 mb-8 max-w-2xl mx-auto fade-in delay-200">
+        Descubra como o Método ASA pode revolucionar sua abordagem analítica e gerar insights de alto impacto para seu negócio.
+      </p>
+      <div class="flex-responsive fade-in delay-300">
+        <a href="projetos.html" class="btn fade-in-left delay-400" aria-label="Veja nossos casos de sucesso">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+          </svg>
+          Ver Cases de Sucesso
+        </a>
+        <a href="contato.html" class="btn-secondary fade-in-right delay-400" aria-label="Entre em contato para implementar o método">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+          Implementar Agora
+        </a>
       </div>
     </div>
   </main>
 
   <script src="scripts/main.js"></script>
+  <script>
+    // Interatividade específica da página ASA
+    document.addEventListener('DOMContentLoaded', () => {
+      // Animação do fluxo do processo
+      const circles = document.querySelectorAll('#process-flow circle[data-phase]');
+      const line = document.getElementById('connection-line');
+      
+      // Animar linha de conexão
+      gsap.fromTo(line, 
+        { strokeDasharray: 1000, strokeDashoffset: 1000 },
+        { strokeDashoffset: 0, duration: 2, ease: "power2.out", delay: 1 }
+      );
+
+      // Interatividade dos círculos
+      circles.forEach((circle, index) => {
+        circle.addEventListener('mouseenter', () => {
+          gsap.to(circle, { scale: 1.2, duration: 0.3, ease: "back.out(1.7)" });
+          
+          // Destacar card correspondente
+          const phase = circle.getAttribute('data-phase');
+          const card = document.getElementById(`${phase}-card`);
+          if (card) {
+            card.classList.add('ring-2', 'ring-[#B3E3D7]');
+          }
+        });
+
+        circle.addEventListener('mouseleave', () => {
+          gsap.to(circle, { scale: 1, duration: 0.3, ease: "power2.out" });
+          
+          // Remover destaque do card
+          const phase = circle.getAttribute('data-phase');
+          const card = document.getElementById(`${phase}-card`);
+          if (card) {
+            card.classList.remove('ring-2', 'ring-[#B3E3D7]');
+          }
+        });
+      });
+
+      // Indicador de progresso de scroll
+      window.addEventListener('scroll', () => {
+        const scrollProgress = document.getElementById('scroll-progress');
+        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+      });
+    });
+  </script>
 </body>
 </html>

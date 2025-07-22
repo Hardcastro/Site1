@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contato - AEther</title>
+  <title>Contato - AEther | Fale Conosco</title>
   <meta name="description" content="Entre em contato com a AEther. Estamos prontos para transformar dados em insights valiosos para seu negócio." />
+  <meta name="keywords" content="Contato, Fale Conosco, Orçamento, Consultoria, Business Intelligence" />
+  <meta name="author" content="AEther SoftQuant" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aether.com/contato.html" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contato - AEther" />
+  <meta property="og:description" content="Entre em contato conosco para transformar seus dados em insights valiosos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aether.com/contato.html" />
+  <meta property="og:image" content="https://aether.com/assets/aether_hero_illustration.png" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contato - AEther" />
+  <meta name="twitter:description" content="Entre em contato para consultoria em análise de dados." />
+  <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
@@ -36,8 +53,11 @@
     <div class="data-grid-overlay absolute inset-0"></div>
   </div>
 
+  <!-- Indicador de Progresso de Scroll -->
+  <div class="scroll-indicator" id="scroll-progress"></div>
+
   <!-- Formulário de Contato -->
-  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 relative">
+  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-20 relative">
     <!-- Header -->
     <div class="text-center mb-12 relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6">Vamos conversar?</h1>
@@ -46,12 +66,7 @@
       </p>
     </div>
 
-    <!-- Conteúdo do Formulário -->ctive -->
-    <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
-      <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-      <div class="geometric-pattern absolute inset-0"></div>
-      <div class="data-grid-overlay absolute inset-0"></div>
-    </div>
+    <!-- Conteúdo do Formulário -->
     <form
       action="#" 
       method="POST"
@@ -67,9 +82,13 @@
             name="nome"
             type="text"
             required
+            minlength="2"
+            maxlength="100"
             placeholder="Seu nome completo"
+            aria-describedby="nome-help"
             class="w-full p-3 rounded-lg bg-[#0D1B1E] border border-[#B3E3D7] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] transition-colors"
           />
+          <span id="nome-help" class="sr-only">Digite seu nome completo</span>
         </div>
 
         <div>
@@ -79,9 +98,12 @@
             name="email"
             type="email"
             required
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             placeholder="seu.email@exemplo.com"
+            aria-describedby="email-help"
             class="w-full p-3 rounded-lg bg-[#0D1B1E] border border-[#B3E3D7] text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] transition-colors"
           />
+          <span id="email-help" class="sr-only">Digite um endereço de email válido</span>
         </div>
       </div>
 
@@ -115,11 +137,25 @@
 
       <button
         type="submit"
-        class="w-full bg-[#B3E3D7] text-black font-bold py-4 rounded-lg shadow-md hover:bg-[#A0D9CD] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed"
+        class="w-full bg-[#B3E3D7] text-black font-bold py-4 rounded-lg shadow-md hover:bg-[#A0D9CD] hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
         id="submit-btn"
       >
-        Enviar Mensagem
+        <span class="relative z-10">Enviar Mensagem</span>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#B3E3D7] to-[#A0D9CD] opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
       </button>
+
+      <!-- Feedback de Envio -->
+      <div id="form-feedback" class="mt-4 p-4 rounded-lg opacity-0 transform translate-y-4 transition-all duration-300" role="alert" aria-live="polite">
+        <p id="feedback-message" class="text-center font-semibold"></p>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loading-overlay" class="loading-overlay" aria-hidden="true">
+        <div class="loading-container">
+          <div class="loading-spinner-advanced"></div>
+          <div class="loading-text">Enviando mensagem...</div>
+        </div>
+      </div>
     </form>
 
     <!-- Informações de contato -->
