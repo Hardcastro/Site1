@@ -1,7 +1,8 @@
-/* === Variáveis de cores AEther - Tema Escuro === */
+/* === Variáveis de cores AEther - Redesign === */
 :root {
   --primary-mint: #B3E3D7;
-  --primary-black: #000000;
+  --neon-lime: #CCFF00;
+  --primary-black: #121212;
   --dark-navy: #0A0F12;
   --medium-dark: #1A1F23;
   --light-grey: #2A3138;
@@ -9,6 +10,8 @@
   --text-secondary: #B3E3D7;
   --text-muted: #8A9299;
   --accent-hover: #9DD4C7;
+  --cta-primary: #CCFF00;
+  --cta-hover: #B8E600;
 }
 
 /* === Reset & Base === */
@@ -21,7 +24,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--primary-black);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
@@ -38,13 +41,15 @@ body {
 
 /* === Tipografia Aprimorada === */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
   color: var(--primary-mint);
   margin-top: 0;
   text-shadow: 0 0 20px rgba(179, 227, 215, 0.3);
   letter-spacing: -0.02em;
   line-height: 1.2;
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
@@ -63,7 +68,7 @@ h3 {
 }
 
 p, li, span, a {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: var(--text-primary);
   line-height: 1.7;
@@ -102,13 +107,14 @@ nav {
   flex-wrap: wrap;
   gap: clamp(0.5rem, 2vw, 1.5rem);
   padding: clamp(0.75rem, 2vw, 1.25rem) clamp(0.5rem, 2vw, 1rem);
-  z-index: 9999;
+  z-index: 10000;
   user-select: none;
   font-weight: 700;
   font-family: 'Plus Jakarta Sans', sans-serif;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-  min-height: 80px;
+  min-height: var(--nav-height);
   align-items: center;
+  isolation: isolate;
 }
 
 nav::before {
@@ -204,15 +210,17 @@ nav a.nav-link.active {
     rgba(179, 227, 215, 0.15), 
     rgba(179, 227, 215, 0.08));
   box-shadow: 
-    0 8px 25px rgba(179, 227, 215, 0.3),
-    inset 0 1px 0 rgba(179, 227, 215, 0.4),
-    0 0 0 1px rgba(179, 227, 215, 0.2);
+    0 8px 25px rgba(179, 227, 215, 0.4),
+    inset 0 1px 0 rgba(179, 227, 215, 0.5),
+    0 0 0 1px rgba(179, 227, 215, 0.3),
+    0 0 20px rgba(179, 227, 215, 0.6);
+  will-change: transform, box-shadow;
 }
 
 /* === Seções Centralizadas === */
 section {
   min-height: 100vh;
-  padding: 12rem 2rem 4rem;
+  padding: 10rem 2rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,6 +230,7 @@ section {
   margin: 0 auto;
   position: relative;
   width: 100%;
+  z-index: 1;
 }
 
 main {
@@ -233,15 +242,17 @@ main {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 12rem 2rem 2rem;
+  padding: 10rem 2rem 2rem;
   position: relative;
   gap: 2rem;
+  z-index: 1;
 }
 
 /* Layout específico para páginas internas */
 main.internal-page {
   justify-content: flex-start;
-  padding-top: 12rem;
+  padding-top: calc(var(--nav-height) + 2rem);
+  min-height: calc(100vh - var(--nav-height));
 }
 
 .hidden {
@@ -272,9 +283,12 @@ main.internal-page {
   user-select: none;
   backdrop-filter: blur(20px);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
   will-change: transform;
+  z-index: 1;
+  isolation: isolate;
+  contain: layout style;
 }
 
 /* === Card Variants === */
@@ -311,6 +325,8 @@ main.internal-page {
   border-radius: inherit;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .card:hover::before {
@@ -347,6 +363,7 @@ main.internal-page {
   transition: all 0.6s ease;
   pointer-events: none;
   opacity: 0;
+  z-index: -1;
 }
 
 .card:hover::after {
@@ -392,6 +409,8 @@ main.internal-page {
   font-weight: 800;
   text-shadow: 0 0 20px rgba(179, 227, 215, 0.3);
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .card:hover h3 {
@@ -404,10 +423,17 @@ main.internal-page {
   line-height: 1.7;
   font-size: 1.05rem;
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .card:hover p {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* === Thumbnails Publicações === */
@@ -750,6 +776,28 @@ main.internal-page {
     font-size: 0.75rem;
     min-height: 40px;
   }
+
+  main {
+    padding-top: 8rem;
+  }
+
+  main.internal-page {
+    padding-top: 8rem;
+  }
+
+  section {
+    padding-top: 8rem;
+  }
+
+  h1 {
+    font-size: clamp(1.75rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -796,11 +844,15 @@ main.internal-page {
   }
 
   main {
-    padding: clamp(8rem, 15vw, 10rem) clamp(1rem, 2vw, 1.5rem) 2rem;
+    padding: 9rem clamp(1rem, 2vw, 1.5rem) 2rem;
+  }
+
+  main.internal-page {
+    padding-top: 9rem;
   }
 
   section {
-    padding: clamp(8rem, 15vw, 10rem) clamp(1rem, 2vw, 1.5rem) 2rem;
+    padding: 9rem clamp(1rem, 2vw, 1.5rem) 2rem;
   }
 
   .grid-responsive {
@@ -811,10 +863,12 @@ main.internal-page {
   h1 {
     font-size: clamp(1.75rem, 6vw, 3rem);
     line-height: 1.1;
+    margin-bottom: 1.5rem;
   }
 
   h2 {
     font-size: clamp(1.4rem, 5vw, 2rem);
+    margin-bottom: 1.25rem;
   }
 
   .flex-responsive {
@@ -891,16 +945,16 @@ main.internal-page {
 button,
 input[type="submit"],
 .btn {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  background: linear-gradient(135deg, var(--primary-mint), var(--accent-hover));
+  background: linear-gradient(135deg, var(--cta-primary), var(--cta-hover));
   color: var(--primary-black);
   border: none;
   padding: 1rem 2rem;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(179, 227, 215, 0.3);
+  box-shadow: 0 4px 20px rgba(204, 255, 0, 0.4);
   position: relative;
   overflow: hidden;
   text-decoration: none;
@@ -912,6 +966,9 @@ input[type="submit"],
   font-size: 1rem;
   line-height: 1.2;
   white-space: nowrap;
+  will-change: transform, box-shadow;
+  z-index: 3;
+  isolation: isolate;
 }
 
 /* === Variações de Tamanho de Botões === */
@@ -960,10 +1017,10 @@ input[type="submit"]:hover,
 button:focus-visible,
 input[type="submit"]:focus-visible,
 .btn:focus-visible {
-  background: linear-gradient(135deg, var(--accent-hover), var(--primary-mint));
+  background: linear-gradient(135deg, var(--cta-hover), var(--cta-primary));
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(179, 227, 215, 0.5);
-  outline: 2px solid var(--primary-mint);
+  box-shadow: 0 12px 40px rgba(204, 255, 0, 0.7);
+  outline: 2px solid var(--neon-lime);
   outline-offset: 2px;
 }
 
@@ -1216,6 +1273,13 @@ textarea::placeholder {
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
   gap: clamp(1rem, 3vw, 2rem);
   width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.grid-responsive > * {
+  position: relative;
+  z-index: 1;
 }
 
 .flex-responsive {
@@ -1243,7 +1307,15 @@ textarea::placeholder {
 
 @media (min-width: 768px) {
   section {
-    padding: clamp(6rem, 10vw, 10rem) clamp(1rem, 4vw, 2rem) 4rem;
+    padding: clamp(8rem, 12vw, 12rem) clamp(1rem, 4vw, 2rem) 4rem;
+  }
+
+  main {
+    padding-top: clamp(8rem, 12vw, 12rem);
+  }
+
+  main.internal-page {
+    padding-top: clamp(8rem, 12vw, 12rem);
   }
 }
 
@@ -1409,10 +1481,12 @@ textarea::placeholder {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--primary-mint), var(--accent-hover));
-  z-index: 9998;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary-mint), var(--neon-lime));
+  z-index: 10001;
   transition: width 0.1s ease;
-  box-shadow: 0 0 10px rgba(179, 227, 215, 0.5);
+  box-shadow: 0 0 15px rgba(179, 227, 215, 0.8);
+  will-change: width;
 }
 
 /* === Estados de Interação Aprimorados === */

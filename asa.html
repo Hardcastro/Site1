@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -37,8 +37,6 @@
   <link rel="stylesheet" href="styles/global.css" />
 </head>
 <body class="bg-black text-white font-body overflow-x-hidden">
-  <!-- Link de acessibilidade -->
-  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- Navegação -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#B3E3D7]/20" role="navigation" aria-label="Navegação principal">
@@ -51,25 +49,17 @@
       <a href="contato.html" class="nav-link" aria-label="Entrar em contato">Contato</a>
     </div>
   </nav>
-
-  <!-- Background Texture Interactive -->
-  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
-    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-    <div class="geometric-pattern absolute inset-0"></div>
-    <div class="data-grid-overlay absolute inset-0"></div>
-  </div>
-
   <!-- Indicador de Progresso de Scroll -->
   <div class="scroll-indicator" id="scroll-progress"></div>
 
   <!-- Conteúdo Principal -->
-  <main id="main-content" class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-20 relative">
+  <main id="main-content" class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-32 md:pt-40 relative">
     <!-- Header -->
-    <div class="text-center mb-16 relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-6 fade-in">Método ASA</h1>
-      <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mb-6 rounded-full fade-in delay-200"></div>
+    <div class="text-center mb-12 md:mb-16 relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-4 md:mb-6 fade-in">Método ASA</h1>
+      <div class="w-20 h-1 bg-gradient-to-r from-[#B3E3D7] to-[#F5C0B5] mx-auto mb-4 md:mb-6 rounded-full fade-in delay-200"></div>
       <p class="text-lg text-gray-300 max-w-2xl mx-auto fade-in delay-300">
-        <strong>Assess</strong>, <strong>Strategize</strong>, <strong>Adapt</strong> - Nossa metodologia revolucionária para análise de dados e tomada de decisão estratégica.
+        <strong class="text-[#CCFF00]">Assess</strong>, <strong class="text-[#CCFF00]">Strategize</strong>, <strong class="text-[#CCFF00]">Adapt</strong> - Nossa metodologia revolucionária transforma dados em vantagem competitiva sustentável.
       </p>
     </div>
 
@@ -96,10 +86,10 @@
 
         <!-- Strategize -->
         <div class="card card-compact text-center group scale-in delay-500" data-step="strategize">
-          <div class="w-16 h-16 bg-[#F5C0B5] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+          <div class="w-16 h-16 bg-[#CCFF00] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
             <span class="text-2xl font-bold text-black">S</span>
           </div>
-          <h2 class="text-2xl font-bold mb-4 text-[#F5C0B5]">Strategize</h2>
+          <h2 class="text-2xl font-bold mb-4 text-[#CCFF00]">Strategize</h2>
           <p class="text-gray-300 mb-6">
             Desenvolvimento de estratégias customizadas baseadas no diagnóstico realizado.
           </p>
@@ -154,14 +144,14 @@
 
       <!-- Call to Action -->
       <div class="text-center">
-        <h2 class="text-2xl font-bold mb-4 text-[#B3E3D7]">Pronto para aplicar o Método ASA?</h2>
-        <p class="text-gray-300 mb-6">Vamos conversar sobre como implementar essa metodologia no seu projeto.</p>
+        <h2 class="text-2xl font-bold mb-4 text-[#B3E3D7]">Pronto para transformar seus dados?</h2>
+        <p class="text-gray-300 mb-6">Solicite um diagnóstico gratuito e descubra como o Método ASA pode acelerar seus resultados.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="projetos.html" class="btn" aria-label="Veja nossos projetos que utilizam o Método ASA">
-            Ver Projetos
+          <a href="contato.html" class="btn" aria-label="Solicite um diagnóstico gratuito com o Método ASA">
+            Solicitar Diagnóstico
           </a>
-          <a href="contato.html" class="btn-secondary" aria-label="Entre em contato para implementar o Método ASA">
-            Fale Conosco
+          <a href="projetos.html" class="btn-secondary" aria-label="Veja nossos projetos que utilizam o Método ASA">
+            Ver Cases de Sucesso
           </a>
         </div>
       </div>

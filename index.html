@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AEther - Início</title>
+  <title>AEther Data</title>
   <meta name="description" content="AEther - Soluções analíticas com alma e precisão. Especialistas em Business Intelligence, Geoanálise e Web3 Analytics." />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- TailwindCSS (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -20,8 +20,6 @@
   <link rel="stylesheet" href="styles/global.css" />
 </head>
 <body class="bg-black text-white font-body overflow-x-hidden">
-  <!-- Link de acessibilidade -->
-  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
   
   <!-- Navegação -->
   <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
@@ -33,13 +31,6 @@
     <a href="contato.html" class="nav-link">Contato</a>
   </nav>
 
-  <!-- Background Texture Interactive -->
-  <div id="background-texture" class="fixed inset-0 overflow-hidden pointer-events-none">
-    <canvas id="particles-canvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-    <div class="geometric-pattern absolute inset-0"></div>
-    <div class="data-grid-overlay absolute inset-0"></div>
-  </div>
-
   <!-- Indicador de Progresso de Scroll -->
   <div class="scroll-indicator" id="scroll-progress"></div>
 
@@ -47,11 +38,36 @@
   <main id="main-content" class="min-h-screen flex flex-col justify-center items-center px-4 relative">
     <div class="relative z-10 text-center">
       <h1 class="fade-in text-[#B3E3D7] leading-tight mb-8">
-        Transformamos dados em <span class="text-[#F5C0B5] pulse-glow">decisões estratégicas</span>
+        Dados estratégicos com <span class="text-[#CCFF00] pulse-glow">metodologia ASA</span>
       </h1>
-      <p class="fade-in delay-200 text-large text-gray-300 max-w-3xl mb-16 mx-auto">
-        Especialistas em Business Intelligence, Geoanálise e Web3 Analytics para profissionais que buscam insights de alto impacto.
+      <p class="fade-in delay-200 text-large text-gray-300 max-w-3xl mb-12 mx-auto">
+        Assess, Strategize, Adapt - Nossa metodologia revolucionária transforma seus dados em vantagem competitiva através de BI, Geoanálise e Web3 Analytics.
       </p>
+      
+      <!-- ASA Method Preview -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+        <div class="card card-compact text-center group scale-in delay-300">
+          <div class="w-12 h-12 bg-[#B3E3D7] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <span class="text-xl font-bold text-black">A</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-[#B3E3D7]">Assess</h3>
+          <p class="text-gray-400 text-sm">Diagnóstico profundo dos seus dados e oportunidades</p>
+        </div>
+        <div class="card card-compact text-center group scale-in delay-400">
+          <div class="w-12 h-12 bg-[#CCFF00] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <span class="text-xl font-bold text-black">S</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-[#CCFF00]">Strategize</h3>
+          <p class="text-gray-400 text-sm">Estratégias customizadas</p>
+        </div>
+        <div class="card card-compact text-center group scale-in delay-500">
+          <div class="w-12 h-12 bg-[#B3E3D7] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <span class="text-xl font-bold text-black">A</span>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-[#B3E3D7]">Adapt</h3>
+          <p class="text-gray-400 text-sm">Implementação ágil com melhoria contínua</p>
+        </div>
+      </div>
 
       <!-- Indicadores Profissionais -->
       <div class="grid-responsive mb-16 max-w-4xl mx-auto">
@@ -73,17 +89,17 @@
       </div>
 
       <div class="flex-responsive fade-in delay-300">
-        <a href="sobre.html" class="btn fade-in-left delay-400" aria-label="Conheça nosso método ASA e nossa abordagem analítica">
+        <a href="contato.html" class="btn fade-in-left delay-400" aria-label="Solicite um diagnóstico gratuito dos seus dados">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          Conheça nosso método
+          Solicitar Diagnóstico
         </a>
-        <a href="contato.html" class="btn fade-in-left delay-400" aria-label="Conheça nosso método ASA e nossa abordagem analítica">
+        <a href="projetos.html" class="btn-secondary fade-in-right delay-500" aria-label="Explore nossos projetos e cases de sucesso">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
-          Entre em contato
+          Explorar Projetos
         </a>
       </div>
     </div>

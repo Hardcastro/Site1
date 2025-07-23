@@ -24,7 +24,7 @@
   <meta name="twitter:image" content="https://aether.com/assets/aether_hero_illustration.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Plus+Jakarta+Sans:wght@400;800&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -38,13 +38,15 @@
 </head>
 <body class="bg-black text-white font-body overflow-x-hidden">
   <!-- Navegação -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
-    <a href="index.html" class="nav-link">Início</a>
-    <a href="sobre.html" class="nav-link">Sobre</a>
-    <a href="asa.html" class="nav-link">Método ASA</a>
-    <a href="projetos.html" class="nav-link active">Projetos</a>
-    <a href="publicacoes.html" class="nav-link">Publicações</a>
-    <a href="contato.html" class="nav-link">Contato</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#B3E3D7]/20" role="navigation" aria-label="Navegação principal">
+    <div class="flex justify-center gap-2 md:gap-6 p-4 max-w-6xl mx-auto">
+      <a href="index.html" class="nav-link" aria-label="Ir para a página inicial">Início</a>
+      <a href="sobre.html" class="nav-link" aria-label="Conhecer mais sobre a AEther">Sobre</a>
+      <a href="asa.html" class="nav-link" aria-label="Conhecer o Método ASA">Método ASA</a>
+      <a href="projetos.html" class="nav-link active" aria-current="page" aria-label="Página atual: Projetos">Projetos</a>
+      <a href="publicacoes.html" class="nav-link" aria-label="Ver publicações e artigos">Publicações</a>
+      <a href="contato.html" class="nav-link" aria-label="Entrar em contato">Contato</a>
+    </div>
   </nav>
 
   <!-- Background Texture Interactive -->

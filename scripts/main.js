@@ -819,15 +819,24 @@ class MicroInteractions {
   }
 
   setupScrollIndicators() {
-    const scrollIndicator = document.createElement('div');
-    scrollIndicator.className = 'scroll-indicator';
-    document.body.appendChild(scrollIndicator);
+    // Already handled in initScrollProgress function
+    
+    // Add enhanced button interactions with neon lime
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, {
+          boxShadow: '0 15px 50px rgba(204, 255, 0, 0.8)',
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
 
-    window.addEventListener('scroll', () => {
-      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      gsap.to(scrollIndicator, {
-        width: `${scrollPercent}%`,
-        duration: 0.1
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          boxShadow: '0 4px 20px rgba(204, 255, 0, 0.4)',
+          duration: 0.3,
+          ease: "power2.out"
+        });
       });
     });
   }
@@ -993,10 +1002,26 @@ function initScrollProgress() {
   const scrollProgress = document.getElementById('scroll-progress');
   if (!scrollProgress) return;
 
-  window.addEventListener('scroll', () => {
-    const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  let ticking = false;
+
+  function updateProgress() {
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
     scrollProgress.style.width = Math.min(scrollPercent, 100) + '%';
-  });
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initialize progress bar
+  const scrollIndicator = document.createElement('div');
+  scrollIndicator.className = 'scroll-indicator';
+  scrollIndicator.id = 'scroll-progress';
+  document.body.appendChild(scrollIndicator);
 }
 
 function initProjectFilters() {
