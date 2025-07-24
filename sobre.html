@@ -47,17 +47,19 @@
   <!-- Indicador de Progresso de Scroll -->
   <div class="scroll-indicator" id="scroll-progress"></div>
   <!-- Navegação -->
-  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center gap-6 p-4 bg-black/95 backdrop-blur-md">
-    <a href="index.html" class="nav-link active">Início</a>
-    <a href="sobre.html" class="nav-link">Sobre</a>
-    <a href="asa.html" class="nav-link">Método ASA</a>
-    <a href="projetos.html" class="nav-link">Projetos</a>
-    <a href="publicacoes.html" class="nav-link">Publicações</a>
-    <a href="contato.html" class="nav-link">Contato</a>
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-[#B3E3D7]/20" role="navigation" aria-label="Navegação principal">
+    <div class="flex justify-center gap-2 md:gap-6 p-4 max-w-6xl mx-auto">
+      <a href="index.html" class="nav-link" aria-label="Ir para a página inicial">Início</a>
+      <a href="sobre.html" class="nav-link active" aria-current="page" aria-label="Página atual: Sobre">Sobre</a>
+      <a href="asa.html" class="nav-link" aria-label="Conhecer o Método ASA">Método ASA</a>
+      <a href="projetos.html" class="nav-link" aria-label="Ver projetos e cases">Projetos</a>
+      <a href="publicacoes.html" class="nav-link" aria-label="Ver publicações e artigos">Publicações</a>
+      <a href="contato.html" class="nav-link" aria-label="Entrar em contato">Contato</a>
+    </div>
   </nav>
 
   <!-- Conteúdo Principal -->
-  <main class="px-6 py-16 pt-24 max-w-6xl mx-auto">
+  <main class="internal-page px-6 py-16 pt-24 max-w-6xl mx-auto">
     <!-- Background Texture Interactive -->
 
     <div class="relative z-10">
@@ -67,35 +69,7 @@
       </p>
     </div>
 
-    <!-- 🔹 LINHA DO TEMPO INTERATIVA -->
-  <div id="linha-do-tempo" class="w-full max-w-4xl mx-auto mb-16 relative">
-    <svg id="linha-do-tempo-svg" viewBox="0 0 600 300" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline da AEther">
-      <path d="M50 200 C150 100, 450 300, 550 200" stroke="#B3E3D7" stroke-width="4" fill="none"/>
-      <circle cx="50" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="fundacao" tabindex="0" role="button" aria-label="Ver detalhes de 2023"/>
-      <circle cx="300" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="expansao" tabindex="0" role="button" aria-label="Ver detalhes de 2024"/>
-      <circle cx="550" cy="200" r="12" fill="#F5C0B5" class="transition-transform duration-300 hover:scale-125 cursor-pointer" data-timeline="futuro" tabindex="0" role="button" aria-label="Ver detalhes de 2025+"/>
-      <text x="50" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2023</text>
-      <text x="300" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2024</text>
-      <text x="550" y="185" fill="#F3F6F9" font-size="14" text-anchor="middle" class="pointer-events-none">2025+</text>
-    </svg>
-    
-    <!-- Detalhes da Linha do Tempo -->
-    <div class="mt-8 space-y-4">
-      <div id="timeline-fundacao" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
-        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Fundação da AEther (2023)</h4>
-        <p class="text-gray-300">Início da jornada com foco em democratizar o acesso à inteligência analítica. Desenvolvimento do Método ASA e primeiros projetos piloto.</p>
-      </div>
-      <div id="timeline-expansao" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
-        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Expansão e Crescimento (2024)</h4>
-        <p class="text-gray-300">Consolidação da metodologia, expansão da equipe e implementação de projetos de grande escala em diferentes setores.</p>
-      </div>
-      <div id="timeline-futuro" class="timeline-detail opacity-0 transform translate-y-4 transition-all duration-300">
-        <h4 class="text-lg font-semibold text-[#F5C0B5] mb-2">Visão de Futuro (2025+)</h4>
-        <p class="text-gray-300">Expansão internacional, desenvolvimento de IA proprietária e consolidação como referência global em analytics estratégicos.</p>
-      </div>
-    </div>
-  </div>
-
+ 
       <!-- 🔹 CARDS DE MISSÃO, VISÃO E VALORES COM HOVER -->
     <div class="grid-responsive text-left">
       <div class="card group scale-in delay-300 tooltip" data-tooltip="Nossa razão de existir">

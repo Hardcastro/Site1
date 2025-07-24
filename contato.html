@@ -59,7 +59,7 @@
   <div class="scroll-indicator" id="scroll-progress"></div>
 
   <!-- Formulário de Contato -->
-  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 pt-32 md:pt-40 relative">
+  <main class="internal-page min-h-screen flex flex-col justify-start items-center px-4 pb-20 relative">
     <!-- Header -->
     <div class="text-center mb-8 md:mb-12 relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-[#B3E3D7] mb-4 md:mb-6">Vamos conversar?</h1>
@@ -137,14 +137,10 @@
         ></textarea>
       </div>
 
-      <button
-        type="submit"
-        class="w-full bg-[#B3E3D7] text-black font-bold py-4 rounded-lg shadow-md hover:bg-[#A0D9CD] hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#B3E3D7] focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
-        id="submit-btn"
-      >
+      <a href="contato.html" class="btn" aria-label="Solicite um diagnóstico gratuito com o Método ASA">
         <span class="relative z-10">Enviar Mensagem</span>
         <div class="absolute inset-0 bg-gradient-to-r from-[#B3E3D7] to-[#A0D9CD] opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-      </button>
+      </a>
 
       <!-- Feedback de Envio -->
       <div id="form-feedback" class="mt-4 p-4 rounded-lg opacity-0 transform translate-y-4 transition-all duration-300" role="alert" aria-live="polite">

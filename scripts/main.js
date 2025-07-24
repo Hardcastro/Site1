@@ -72,32 +72,46 @@ class PageTransitions {
     this.isTransitioning = true;
     this.updateActiveState(activeLink);
 
+    // Criar overlay de transição
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.className = 'page-transition';
+    transitionOverlay.innerHTML = '<div class="transition-logo">AEther</div>';
+    document.body.appendChild(transitionOverlay);
+
     const tl = gsap.timeline({
       onComplete: () => {
         window.location.href = href;
       }
     });
 
-    // Animação de saída
+    // Animação de saída melhorada
     tl.to('.card, .publication-thumb', {
       opacity: 0, 
-      scale: 0.9, 
-      y: -20, 
-      duration: 0.3, 
-      stagger: 0.05, 
+      scale: 0.8, 
+      y: -30, 
+      rotationX: -15,
+      duration: 0.4, 
+      stagger: 0.03, 
       ease: "power2.in"
     })
     .to('main, header', {
       opacity: 0, 
-      y: -30, 
-      duration: 0.4, 
+      y: -50, 
+      scale: 0.95,
+      duration: 0.5, 
       ease: "power2.in"
+    }, "-=0.3")
+    .to(transitionOverlay, {
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out"
     }, "-=0.2")
     .to('nav', {
-      opacity: 0.7, 
+      opacity: 0.5, 
+      y: -10,
       duration: 0.3, 
       ease: "power2.in"
-    }, "-=0.3");
+    }, "-=0.4");
   }
 }
 
@@ -536,8 +550,33 @@ class InteractiveBackground {
   }
 
   createClickEffect(x, y) {
-    // Ondas de expansão 3D
-    const waves = 4;
+    // Criar partículas explosivas no clique
+    for (let i = 0; i < 15; i++) {
+      const angle = (i / 15) * Math.PI * 2;
+      const speed = Math.random() * 5 + 3;
+      const newParticle = {
+        x: x,
+        y: y,
+        z: Math.random() * 50 + 25,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        vz: (Math.random() - 0.5) * 2,
+        size: Math.random() * 4 + 2,
+        alpha: 1,
+        color: { hue: 175, sat: 50, light: 80, depth: Math.random() },
+        pulseOffset: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.05,
+        rotation: 0,
+        type: 'explosion',
+        depth: Math.random(),
+        life: 1,
+        decay: 0.02
+      };
+      this.particles.push(newParticle);
+    }
+
+    // Ondas de expansão 3D melhoradas
+    const waves = 6;
     for (let i = 0; i < waves; i++) {
       setTimeout(() => {
         this.particles.forEach(particle => {
@@ -545,19 +584,20 @@ class InteractiveBackground {
           const dy = y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 250) {
-            const force = (250 - distance) / 250;
+          if (distance < 300) {
+            const force = (300 - distance) / 300;
             const angle = Math.atan2(dy, dx);
-            const depthMultiplier = 1 + particle.depth * 2;
+            const depthMultiplier = 1 + particle.depth * 3;
 
-            particle.vx -= Math.cos(angle) * force * 3 * depthMultiplier;
-            particle.vy -= Math.sin(angle) * force * 3 * depthMultiplier;
-            particle.vz += force * 5;
-            particle.alpha = Math.min(1, particle.alpha + force * 0.8);
-            particle.rotationSpeed += force * 0.05;
+            particle.vx -= Math.cos(angle) * force * 4 * depthMultiplier;
+            particle.vy -= Math.sin(angle) * force * 4 * depthMultiplier;
+            particle.vz += force * 8;
+            particle.alpha = Math.min(1, particle.alpha + force * 1.2);
+            particle.rotationSpeed += force * 0.08;
+            particle.size *= (1 + force * 0.5);
           }
         });
-      }, i * 120);
+      }, i * 100);
     }
   }
 }
@@ -784,19 +824,54 @@ class MicroInteractions {
 
   setupCardInteractions() {
     document.querySelectorAll('.card').forEach(card => {
-      // Efeito de partículas ao hover
+      // Unified particle effect on hover
       card.addEventListener('mouseenter', (e) => {
         this.createParticleEffect(e.currentTarget);
+        
+        // Enhanced hover animation
+        gsap.to(e.currentTarget, {
+          y: -8,
+          scale: 1.02,
+          duration: 0.3,
+          ease: "power2.out"
+        });
       });
 
-      // Efeito de shake sutil ao clicar
+      card.addEventListener('mouseleave', (e) => {
+        gsap.to(e.currentTarget, {
+          y: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+
+      // Subtle shake effect on click
       card.addEventListener('click', (e) => {
         gsap.to(e.currentTarget, {
           rotation: 1,
           duration: 0.1,
           yoyo: true,
           repeat: 1,
-          ease: "power2.inOut"
+          ease: "power2.inOut",
+          onComplete: () => {
+            gsap.set(e.currentTarget, { rotation: 0 });
+          }
+        });
+      });
+
+      // Enhanced focus for accessibility
+      card.addEventListener('focus', (e) => {
+        gsap.to(e.currentTarget, {
+          boxShadow: '0 0 0 3px rgba(179, 227, 215, 0.5)',
+          duration: 0.2
+        });
+      });
+
+      card.addEventListener('blur', (e) => {
+        gsap.to(e.currentTarget, {
+          boxShadow: '0 15px 50px rgba(0, 0, 0, 0.5)',
+          duration: 0.2
         });
       });
     });
